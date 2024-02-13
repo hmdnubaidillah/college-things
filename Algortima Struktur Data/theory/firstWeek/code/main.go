@@ -5,17 +5,18 @@ import (
 )
 
 // show number from 1 to 10 but odd numbers replaced by "*" except 6 and 10
-
-func printNumbers() {
+func deretBilangan() {
 
 	for num := 1; num <= 15; num++ {
-
-		if num == 6 || num == 10 || num%2 != 0 {
+		if num == 6 || num == 10 {
+			continue
+		} else if num%2 != 0 {
 			fmt.Print("*" + " ")
 
 		} else {
 			fmt.Printf("%d ", num)
 		}
+
 	}
 
 }
@@ -49,8 +50,7 @@ func getFilmMinMaxAvg(film []float64) (min float64, max float64) {
 	return min, max
 }
 
-func main() {
-
+func konsepFungsi() {
 	films := [][]int{
 		// col is film
 		{4, 3, 4, 4}, // row is viewer
@@ -84,4 +84,11 @@ func main() {
 	fmt.Println(averageEachFilm)
 	fmt.Println(min)
 	fmt.Println(max)
+}
+
+func main() {
+	// konsepFungsi()
+
+	deretBilangan()
+
 }
