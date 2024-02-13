@@ -87,7 +87,7 @@ func konsepFungsi() {
 }
 
 func main() {
-	// konsepFungsi()
+	konsepFungsi()
 
 	deretBilangan()
 
