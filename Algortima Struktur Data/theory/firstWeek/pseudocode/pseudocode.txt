@@ -1,3 +1,94 @@
 1. Menampilkan deret bilangan 1 - 15 dengan ketentuan:
     a. Bilangan ganjil di ganti menjadi "*"
     b. Bilangan 6 dan 10 tidak ikut di print
+2. Menghitung rata rata film dan mengambil rata rata paling tinggi dan rendah
+
+
+
+Pseudocode :
+
+Soal 1:
+BEGIN
+    for num = 0; num <= 15; i++ do :
+        if num == 6 or num == 10 then :
+            continue;
+
+        else if num % 2 != 0 then :
+            print("*"); 
+
+        else then:
+            print(num);
+        end;
+
+    end;
+END;
+
+
+Soal 2:
+BEGIN
+    // declare ratingFilms array
+    declare ratingFilms = 2DArray{
+        {4,3,4,4},
+        {1,1,2,3},
+        {1,2,3,4},
+    }
+
+    // declare empty array to save each of first index of ratingFilms collumn
+    declare ratingFilm = 2DArray{};
+
+    // itterate each collumn of ratingFilms
+    for i = 0; i < length of ratingFilms[0]; i++ do :
+    
+        // define empty array for storing rating films first index of collumn
+        declare currentFilm = Array{};
+
+        for j = 0; j < length of ratingFilms; j++ do :
+            insert currentFilm with ratingFilms[i][j];
+        end;
+
+        insert ratingFilm with currentFilm;
+    end;
+
+    // declare empty arrat for each rating of film
+    declare eachFilmAverage = Array{}
+
+    for i = 0; i < 4; i++ do :
+         eachFilmAverage = call function hitungRatRataFilm(ratingFilm)
+    end;
+
+
+    // function to sum average film rating
+    define function hitungRataRataFilm(filmsRating[]) :
+        declare total = 0;
+        declare filmRating;
+
+        for filmRating in filmsRating do :
+            total += filmRating;
+
+        end;
+
+        // total divided by 3 becuase each col length is 3
+        return total / 3;
+    end;
+
+
+    define function dapatkakNilaiMaxDanMinFilm(filmAverage[]):
+        declare min = filmAverage[0];
+        declare max = filmAverage[0];
+
+        for i = 0; i < length of filmAverage[]; i++ :
+            // get min
+            if min > film[i] then:
+                min = film[i];
+            end;
+
+            if max < film[i] then:
+                max = film[i];
+            end;
+        end;
+
+        return min, max
+    end;
+
+            
+
