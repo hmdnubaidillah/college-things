@@ -24,21 +24,15 @@ public class Pemilihan {
         float uas = sc.nextFloat();
 
         float nilaiAkhir = 0;
-        boolean isNilaiValid = true;
         String nilaiHuruf = "";
 
         if (tugas < 0 || tugas > 100 || kuis < 0 || kuis > 100 || uts < 0 || uts > 100 || uas < 0 || uas > 100) {
-            isNilaiValid = false;
-            return;
+            System.out.println("Nilai tidak valid");
+            sc.close();
         }
 
         nilaiAkhir = ((tugas * 20) / 100) + ((kuis * 20) / 100) + ((uts * 30) / 100) + ((uas * 40) / 100);
         nilaiAkhir = nilaiAkhir > 100 ? Math.min(nilaiAkhir, 100) : nilaiAkhir;
-
-        if (!isNilaiValid) {
-            System.out.println("Nilai tidak valid");
-            return;
-        }
 
         if (nilaiAkhir <= 100 && nilaiAkhir > 80) {
             nilaiHuruf = "A";
@@ -56,8 +50,18 @@ public class Pemilihan {
             nilaiHuruf = "E";
         }
 
-        System.out.printf("Nilai Akhir : %f\n", nilaiAkhir);
-        System.out.printf("Nilai Huruf : %s\n", nilaiHuruf);
+        boolean isPassed = true;
 
+        if (!nilaiHuruf.equals("A")
+                && !nilaiHuruf.equals("B+")
+                && !nilaiHuruf.equals("B")
+                && !nilaiHuruf.equals("C+")
+                && !nilaiHuruf.equals("C")) {
+            isPassed = false;
+        }
+
+        System.out.printf("Nilai Akhir : %.2f\n", nilaiAkhir);
+        System.out.printf("Nilai Huruf : %s\n", nilaiHuruf);
+        System.out.println(isPassed ? "ANDA LULUS" : "ANDA TIDAK LULUS");
     }
 }

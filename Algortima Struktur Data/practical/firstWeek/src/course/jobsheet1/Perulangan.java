@@ -12,7 +12,19 @@ package src.course.jobsheet1;
 
 public class Perulangan {
     public static void main(String[] args) {
-        int lastDigitNim = 90;
+        String nim = "2341760190";
+
+        // get last digit
+        String temp = "";
+        int lastDigitNim = 0;
+
+        for (int i = 0; i < nim.length(); i++) {
+            temp += nim.charAt(nim.length() - 2);
+            temp += nim.charAt(nim.length() - 1);
+            break;
+        }
+
+        lastDigitNim = Integer.parseInt(temp);
 
         // check if last digit nim les than 10
         if (lastDigitNim < 10) {

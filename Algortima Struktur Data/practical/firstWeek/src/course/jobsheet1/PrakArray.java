@@ -81,6 +81,7 @@ public class PrakArray {
 
         double nilaiMatkul[] = new double[matkul.length];
 
+        // loop for taking input
         for (int i = 0; i < matkul.length; i++) {
             System.out.print("Nilai Matkul " + matkul[i] + " : ");
             nilaiMatkul[i] = sc.nextDouble();
@@ -98,5 +99,7 @@ public class PrakArray {
         }
 
         System.out.println("IP = " + IP);
+
+        sc.close();
     }
 }
