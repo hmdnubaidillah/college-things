@@ -38,12 +38,10 @@ public class Fungsi {
         return incomeOfEachBranch;
     }
 
-    public static String[][] getFLowerStocks(String branchName) {
-
+    public static String[][] getFLowerStocks(String branchName, String[][] deadFlower) {
         String[][] res = new String[flowersStock.length][2];
 
         getBranchName = branchName;
-
         // get branchs name index
         int branchIndex = -1;
 
@@ -52,6 +50,11 @@ public class Fungsi {
                 branchIndex = i;
                 break;
             }
+        }
+
+        // calcualte if there are dead flowers
+        for (int i = 0; i < flowersStock.length; i++) {
+            flowersStock[branchIndex][i] -= Integer.parseInt(deadFlower[i][1]);
         }
 
         // get branch stock and flower
@@ -63,9 +66,11 @@ public class Fungsi {
     }
 
     public static void main(String[] args) {
+        // stock reduced because flowers dies
+        String deadFlower[][] = { { "Aglonema", "1" }, { "Keladi", "2" }, { "Alocasia", "0" }, { "Mawar", "5" } };
 
         int incomeOfEachBranch[] = calculateIncomeOfEachBranch();
-        String[][] getFlowersStock = getFLowerStocks(branchsName[0]); // get Royal Garden 4
+        String[][] getFlowersStock = getFLowerStocks(branchsName[3], deadFlower); // get Royal Garden 4
 
         // soal 1
         for (int i = 0; i < incomeOfEachBranch.length; i++) {
@@ -81,6 +86,5 @@ public class Fungsi {
                     getFlowersStock[i][0],
                     getFlowersStock[i][1]);
         }
-
     }
 }
