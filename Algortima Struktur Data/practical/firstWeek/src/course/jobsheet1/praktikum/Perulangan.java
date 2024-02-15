@@ -1,4 +1,4 @@
-package src.course.jobsheet1;
+package src.course.jobsheet1.praktikum;
 
 /*
  * cetak angka 1 - n dengan catatan:

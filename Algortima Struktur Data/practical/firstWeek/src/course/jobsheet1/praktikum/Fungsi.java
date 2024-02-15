@@ -1,4 +1,4 @@
-package src.course.jobsheet1;
+package src.course.jobsheet1.praktikum;
 
 public class Fungsi {
 
@@ -38,7 +38,7 @@ public class Fungsi {
         return incomeOfEachBranch;
     }
 
-    public static String[][] getFLowerStocks(String branchName, String[][] deadFlower) {
+    public static String[][] getFlowerStocks(String branchName, String[][] deadFlower) {
         String[][] res = new String[flowersStock.length][2];
 
         getBranchName = branchName;
@@ -70,7 +70,7 @@ public class Fungsi {
         String deadFlower[][] = { { "Aglonema", "1" }, { "Keladi", "2" }, { "Alocasia", "0" }, { "Mawar", "5" } };
 
         int incomeOfEachBranch[] = calculateIncomeOfEachBranch();
-        String[][] getFlowersStock = getFLowerStocks(branchsName[3], deadFlower); // get Royal Garden 4
+        String[][] getFlowersStock = getFlowerStocks(branchsName[3], deadFlower); // get Royal Garden 4
 
         // soal 1
         for (int i = 0; i < incomeOfEachBranch.length; i++) {
