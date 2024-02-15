@@ -26,7 +26,6 @@ public class Fungsi {
          * 
          * multiply stock bunga with harga bunga
          * 
-         * 
          */
 
         // multiply stock bunga with harga bunga
@@ -54,7 +53,6 @@ public class Fungsi {
                 }
             }
         }
-
         return res;
     }
 

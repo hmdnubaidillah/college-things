@@ -1,7 +1,6 @@
 package src.course.jobsheet1;
 
 import java.util.*;
-import java.math.*;
 
 /**
  * Pemilihan

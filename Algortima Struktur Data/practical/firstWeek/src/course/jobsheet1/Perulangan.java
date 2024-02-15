@@ -36,9 +36,9 @@ public class Perulangan {
             if (i == 6 || i == 10) {
                 continue;
             } else if (i % 2 != 0) {
-                System.out.print("*");
+                System.out.print("* ");
             } else {
-                System.out.print(i);
+                System.out.print(i + " ");
             }
         }
     }

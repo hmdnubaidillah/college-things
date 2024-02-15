@@ -2,13 +2,6 @@ package src.course.jobsheet1;
 
 import java.util.*;
 
-/*
- * 
- * 
- * 
- * 
- */
-
 public class PrakArray {
 
     static String matkul[] = { "Matdas", "Agama", "PAMB", "KTI", "BIN", "BIG", "CTPS", "Daspro", "P.Daspro" };
