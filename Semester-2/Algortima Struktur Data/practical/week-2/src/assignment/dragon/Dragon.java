@@ -14,63 +14,34 @@ public class Dragon {
     void moveRight() {
         this.x++;
         System.out.println("Dragon moved to right");
-
-        boolean isCollided = detectCollision(this.x, this.y);
-
-        if (!isCollided) {
-            return;
-        }
-
-        System.out.println("Collided : " + isCollided);
-        this.x--;
+        detectCollision(this.x, this.y);
     }
 
     void moveLeft() {
         this.x--;
         System.out.println("Dragon moved to left");
-
-        boolean isCollided = detectCollision(this.x, this.y);
-
-        if (!isCollided) {
-            return;
-        }
-
-        System.out.println("Collided : " + isCollided);
-        this.x++;
+        detectCollision(this.x, this.y);
     }
 
     void moveUp() {
         this.y++;
         System.out.println("Dragon moved to up");
-
-        boolean isCollided = detectCollision(this.x, this.y);
-
-        if (!isCollided) {
-            return;
-        }
-
-        System.out.println("Collided : " + isCollided);
-        this.y--;
+        detectCollision(this.x, this.y);
     }
 
     void moveBottom() {
         this.y--;
         System.out.println("Dragon moved to bottom");
-
-        boolean isCollided = detectCollision(this.x, this.y);
-
-        if (!isCollided) {
-            return;
-        }
-        System.out.println("Collided : " + isCollided);
-        this.y++;
+        detectCollision(this.x, this.y);
     }
 
     void printPosition() {
         System.out.printf("position\nx : %d\ny : %d\n", this.x, this.y);
     }
 
-    boolean detectCollision(int x, int y) {
-        return x < 0 || x > this.width || y < 0 || y > this.height;
+    void detectCollision(int x, int y) {
+        if (x < 0 || x > this.width || y < 0 || y > this.height) {
+            System.out.println("Collided, game over");
+        }
     }
 }

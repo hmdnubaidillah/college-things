@@ -3,10 +3,10 @@ package dragon;
 import java.util.*;
 
 class Main {
-    static Dragon dragon = new Dragon(5, 5);
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
+        Dragon dragon = new Dragon(5, 5);
 
         while (true) {
             System.out.println();
@@ -19,6 +19,7 @@ class Main {
             System.out.println("5. print position");
             System.out.println();
             System.out.print("enter value? (0 : exit) : ");
+
             int input = sc.nextInt();
             System.out.println();
 
