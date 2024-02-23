@@ -7,6 +7,5 @@ public class Main {
         buku1.hitungHargaTotal();
         buku1.hitungDiskon();
         buku1.tampilInformasi();
-
     }
 }
